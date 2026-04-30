@@ -1,0 +1,35 @@
+.results-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding-bottom: 40px;
+}
+
+.results-box {
+  width: 80%;
+  max-width: 900px;
+  min-height: 350px;
+
+  padding: 20px;
+  border-radius: 12px;
+
+  background: rgba(0, 0, 0, 0.799);
+  border: 1px solid rgba(118, 116, 116, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-state {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 0.85;
+  }
+}
