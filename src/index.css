@@ -9,3 +9,10 @@ body,
   font-family: 'MountainKing';
   src: url('/fonts/Sandeymolsedemo-m2e45.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'CloisterBlack';
+  src: url('/fonts/CloisterBlackLight-axjg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

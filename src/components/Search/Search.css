@@ -83,8 +83,8 @@
 }
 
 .search-box button:hover {
-  background-color: rgb(54, 28, 28);
   color: rgb(255, 25, 25);
+  background-color: rgb(18, 18, 18);
   transition: all 0.4s ease-out;
 }
 
