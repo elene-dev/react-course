@@ -4,7 +4,15 @@ import './Card.css';
 
 class Card extends Component<Character> {
   render() {
-    const { name, name_kanji, nicknames, about, image_url } = this.props;
+    const {
+      name,
+      description,
+      name_kanji,
+      nicknames,
+      role,
+      favorites,
+      image_url,
+    } = this.props;
     return (
       <article className="card">
         <div className="card-image-box">
@@ -22,7 +30,9 @@ class Card extends Component<Character> {
                 ? nicknames.join(', ')
                 : 'No Nickname Found'}
             </p>
-            <p>{about}</p>
+            <p>Role: {role}</p>
+            <p>Favorites: {favorites.toLocaleString()}</p>
+            <p>{description}</p>
           </div>
         </div>
       </article>

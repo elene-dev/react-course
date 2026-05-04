@@ -13,7 +13,9 @@ class Results extends Component<ResultsProps> {
 
     return (
       <section className="results-section">
-        <div className="results-box">
+        <div
+          className={`results-box ${characters.length === 0 ? 'empty' : ''}`}
+        >
           {characters.length === 0 ? (
             <img
               src="/images/results-appear.png"

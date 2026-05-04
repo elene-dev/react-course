@@ -12,15 +12,16 @@
 
   padding: 20px;
   border-radius: 12px;
+  box-sizing: border-box; /* 👈 padding counted inside width */
 
   background: rgba(0, 0, 0, 0.799);
   border: 1px solid rgba(118, 116, 116, 0.3);
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* 👈 stack cards vertically */
+  justify-content: flex-start; /* 👈 not center */
+  align-items: stretch; /* 👈 cards fill full width */
 }
-
 .empty-state {
   max-width: 300px;
   width: 100%;
@@ -32,4 +33,9 @@
   to {
     opacity: 0.85;
   }
+}
+
+.results-box.empty {
+  justify-content: center;
+  align-items: center;
 }

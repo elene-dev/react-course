@@ -3,6 +3,7 @@ import './Search.css';
 
 type SearchState = {
   name: string;
+  lastSubmittedName: string;
 };
 
 type SearchProps = {
@@ -12,7 +13,17 @@ type SearchProps = {
 class Search extends Component<SearchProps, SearchState> {
   state: SearchState = {
     name: '',
+    lastSubmittedName: '',
   };
+
+  componentDidMount() {
+    const savedSearch = localStorage.getItem('lastSearch') ?? '';
+
+    this.setState({
+      name: savedSearch,
+      lastSubmittedName: savedSearch.trim(),
+    });
+  }
 
   searchName = (e: ChangeEvent<HTMLInputElement>) => {
     this.setState({
@@ -20,42 +31,42 @@ class Search extends Component<SearchProps, SearchState> {
     });
   };
 
-  componentDidMount() {
-    const savedSearch = localStorage.getItem('lastSearch');
-
-    if (savedSearch !== null) {
-      this.setState({
-        name: savedSearch,
-      });
-    }
-  }
-
   handleClick = () => {
-    const trimName = this.state.name.trim();
+    const trimmedName = this.state.name.trim();
 
-    if (!trimName) return;
+    if (trimmedName === this.state.lastSubmittedName) return;
 
-    localStorage.setItem('lastSearch', trimName);
+    localStorage.setItem('lastSearch', trimmedName);
 
     this.setState({
-      name: trimName,
+      name: trimmedName,
+      lastSubmittedName: trimmedName,
     });
 
-    this.props.handleSearch(trimName);
+    this.props.handleSearch(trimmedName);
   };
 
   render() {
+    const trimmedName = this.state.name.trim();
+    const isSearchDisabled = trimmedName === this.state.lastSubmittedName;
+
     return (
       <section className="search-section">
         <div className="search-box">
           <img src="/images/apple.png" alt="" className="search-icon" />
+
           <input
             type="text"
             placeholder="Search..."
             value={this.state.name}
             onChange={this.searchName}
           />
-          <button type="button" onClick={this.handleClick}>
+
+          <button
+            type="button"
+            onClick={this.handleClick}
+            disabled={isSearchDisabled}
+          >
             Search
           </button>
         </div>
