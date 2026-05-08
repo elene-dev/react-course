@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
   test: {
     environment: 'jsdom',
-    setupFiles: './src/tests/setup.ts',
+    setupFiles: './src/test-utils/setup.ts',
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html'],
@@ -17,7 +17,7 @@ export default defineConfig({
         'src/**/*.test.{ts,tsx}',
         'src/**/*.spec.{ts,tsx}',
         'src/main.tsx',
-        'src/tests/setup.ts',
+        'src/test-utils/setup.ts',
         'src/**/*.d.ts',
       ],
 
