@@ -31,7 +31,7 @@ describe('Card', () => {
     expect(screen.getByText('Favorites: 50,000')).toBeInTheDocument();
     expect(screen.getByRole('img', { name: 'Light Yagami' })).toHaveAttribute(
       'src',
-      'https://deathnote.com/light.jpg'
+      'https://upload.wikimedia.org/wikipedia/en/0/0c/Light_from_Death_Note.jpg'
     );
   });
 
