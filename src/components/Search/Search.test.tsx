@@ -62,4 +62,10 @@ describe('Search', () => {
     expect(button).toBeDisabled();
     expect(handleSearch).not.toHaveBeenCalled();
   });
+
+  it('disables search when input is empty', () => {
+    render(<Search handleSearch={vi.fn()} />);
+
+    expect(screen.getByRole('button', { name: 'Search' })).toBeDisabled();
+  });
 });
