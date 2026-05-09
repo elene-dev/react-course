@@ -12,7 +12,8 @@ const characters: Character[] = [
     nicknames: ['Kira'],
     role: 'Character',
     favorites: 50000,
-    image_url: 'https://deathnote.com/light.jpg',
+    image_url:
+      'https://upload.wikimedia.org/wikipedia/en/0/0c/Light_from_Death_Note.jpg',
   },
   {
     mal_id: 2,
@@ -22,7 +23,8 @@ const characters: Character[] = [
     nicknames: ['Second Kira'],
     role: 'Character',
     favorites: 25000,
-    image_url: 'https://deathnote.com/misa.jpg',
+    image_url:
+      'https://static.wikia.nocookie.net/deathnote/images/0/0c/Misa_amane.jpg/revision/latest?cb=20130526210643',
   },
 ];
 

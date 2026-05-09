@@ -13,7 +13,7 @@ class Results extends Component<ResultsProps> {
 
     return (
       <section className="results-section">
-        <div
+        <disv
           className={`results-box ${characters.length === 0 ? 'empty' : ''}`}
         >
           {characters.length === 0 ? (
@@ -25,7 +25,7 @@ class Results extends Component<ResultsProps> {
           ) : (
             <CardList characters={characters} />
           )}
-        </div>
+        </disv>
       </section>
     );
   }

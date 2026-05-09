@@ -11,7 +11,8 @@ const character: Character = {
   nicknames: ['Kira'],
   role: 'Character',
   favorites: 50000,
-  image_url: 'https://deathnote.com/light.jpg',
+  image_url:
+    'https://upload.wikimedia.org/wikipedia/en/0/0c/Light_from_Death_Note.jpg',
 };
 
 describe('Card', () => {
