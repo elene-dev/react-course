@@ -2,22 +2,11 @@ import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Card from './Card';
 import type { Character } from '../../models/Character';
-
-const character: Character = {
-  mal_id: 1,
-  name: 'Light Yagami',
-  description: 'A student who finds the Death Note.',
-  name_kanji: '夜神月',
-  nicknames: ['Kira'],
-  role: 'Character',
-  favorites: 50000,
-  image_url:
-    'https://upload.wikimedia.org/wikipedia/en/0/0c/Light_from_Death_Note.jpg',
-};
+import { lightCharacter } from '../../test-utils/mockCharacters';
 
 describe('Card', () => {
   it('displays full information of the character', () => {
-    render(<Card {...character} />);
+    render(<Card {...lightCharacter} />);
 
     expect(
       screen.getByRole('heading', { name: 'Light Yagami' })
@@ -37,7 +26,7 @@ describe('Card', () => {
 
   it('shows No Nickname Found if nicknames array is empty', () => {
     const noNicknameCharacter: Character = {
-      ...character,
+      ...lightCharacter,
       nicknames: [],
     };
 
@@ -50,7 +39,7 @@ describe('Card', () => {
 
   it('shows formatted nicknames when character has several', () => {
     const severalNicknameCharacter: Character = {
-      ...character,
+      ...lightCharacter,
       nicknames: ['Kira', 'God of the New World'],
     };
 
